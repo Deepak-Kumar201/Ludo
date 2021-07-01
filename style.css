@@ -1,0 +1,130 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    overflow: hidden;
+}
+
+.box:hover {
+    overflow: scroll;
+}
+
+.red,
+.blue {
+    display: flex;
+    width: 150px;
+    flex-wrap: wrap;
+}
+
+.green,
+.yellow {
+    display: flex;
+    width: 300px;
+    flex-wrap: wrap;
+}
+
+#center {
+    position: absolute;
+    top: 300px;
+    left: 300px;
+}
+
+.red {
+    position: absolute;
+    top: 0px;
+    left: 300px;
+}
+
+.green {
+    position: absolute;
+    left: 450px;
+    top: 300px;
+}
+
+.blue {
+    position: absolute;
+    left: 300px;
+    top: 450px;
+}
+
+.yellow {
+    position: absolute;
+    left: 0px;
+    top: 300px;
+}
+
+#redImg {
+    position: absolute;
+    top: 0px;
+    left: 450px;
+}
+
+.tl {
+    position: absolute;
+    top: 75px;
+    left: 75px;
+}
+
+.tr {
+    position: absolute;
+    top: 75px;
+    left: 175px;
+}
+
+.bl {
+    position: absolute;
+    top: 175px;
+    left: 75px;
+}
+
+.br {
+    position: absolute;
+    top: 175px;
+    left: 175px;
+}
+
+#greenImg {
+    position: absolute;
+    top: 450px;
+    left: 450px;
+}
+
+#blueImg {
+    position: absolute;
+    top: 450px;
+    left: 0px;
+}
+
+#yellowImg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#dice {
+    width: 100px;
+    height: 100px;
+    border: none;
+    position: absolute;
+    left: 790px;
+    top: 325px;
+    background: darkolivegreen;
+    color: white;
+    font-size: 40px;
+    text-shadow: 1px 1px 40px #123456;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}

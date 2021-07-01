@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="red" id="red">
+        <div id="red6" class="box"></div>
+        <div id="red7" class="box" style="background-color: red;"></div>
+        <div id="red13" class="box"></div>
+        <div id="red5" class="box"></div>
+        <div id="red8" class="box" style="background-color: red;"></div>
+        <div id="red14" class="box" style="background-color: red;"></div>
+        <div id="red4" class="box" style="background-color: red;"></div>
+        <div id="red9" class="box" style="background-color: red;"></div>
+        <div id="red15" class="box"></div>
+        <div id="red3" class="box"></div>
+        <div id="red10" class="box" style="background-color: red;"></div>
+        <div id="red16" class="box"></div>
+        <div id="red2" class="box"></div>
+        <div id="red11" class="box" style="background-color: red;"></div>
+        <div id="red17" class="box"></div>
+        <div id="red1" class="box"></div>
+        <div id="red12" class="box" style="background-color: red;"></div>
+        <div id="red18" class="box"></div>
+    </div>
+
+
+    <div class="blue" id="blue">
+        <div id="blue18" class="box"></div>
+        <div id="blue12" class="box" style="background-color: blue;"></div>
+        <div id="blue1" class="box"></div>
+        <div id="blue17" class="box"></div>
+        <div id="blue11" class="box" style="background-color: blue;"></div>
+        <div id="blue2" class="box"></div>
+        <div id="blue16" class="box"></div>
+        <div id="blue10" class="box" style="background-color: blue;"></div>
+        <div id="blue3" class="box"></div>
+        <div id="blue15" class="box"></div>
+        <div id="blue9" class="box" style="background-color: blue;"></div>
+        <div id="blue4" class="box" style="background-color: blue;"></div>
+        <div id="blue14" class="box" style="background-color: blue;"></div>
+        <div id="blue8" class="box" style="background-color: blue;"></div>
+        <div id="blue5" class="box"></div>
+        <div id="blue13" class="box"></div>
+        <div id="blue7" class="box" style="background-color: blue;"></div>
+        <div id="blue6" class="box"></div>
+    </div>
+
+
+    <div class="green" id="green">
+        <div class="box" id="green1"></div>
+        <div class="box" id="green2"></div>
+        <div class="box" id="green3"></div>
+        <div class="box" id="green4" style="background-color: green;"></div>
+        <div class="box" id="green5"></div>
+        <div class="box" id="green6"></div>
+        <div class="box" id="green12" style="background-color: green;"></div>
+        <div class="box" id="green11" style="background-color: green;"></div>
+        <div class="box" id="green10" style="background-color: green;"></div>
+        <div class="box" id="green9" style="background-color: green;"></div>
+        <div class="box" id="green8" style="background-color: green;"></div>
+        <div class="box" id="green7" style="background-color: green;"></div>
+        <div class="box" id="green18"></div>
+        <div class="box" id="green17"></div>
+        <div class="box" id="green16"></div>
+        <div class="box" id="green15"></div>
+        <div class="box" id="green14" style="background-color: green;"></div>
+        <div class="box" id="green13"></div>
+    </div>
+
+
+    <div class="yellow" id="yellow">
+        <div id="yellow13" class="box"></div>
+        <div id="yellow14" class="box" style="background-color: yellow;"></div>
+        <div id="yellow15" class="box"></div>
+        <div id="yellow16" class="box"></div>
+        <div id="yellow17" class="box"></div>
+        <div id="yellow18" class="box"></div>
+        <div id="yellow7" class="box" style="background-color: yellow;"></div>
+        <div id="yellow8" class="box" style="background-color: yellow;"></div>
+        <div id="yellow9" class="box" style="background-color: yellow;"></div>
+        <div id="yellow10" class="box" style="background-color: yellow;"></div>
+        <div id="yellow11" class="box" style="background-color: yellow;"></div>
+        <div id="yellow12" class="box" style="background-color: yellow;"></div>
+        <div id="yellow6" class="box"></div>
+        <div id="yellow5" class="box"></div>
+        <div id="yellow4" class="box" style="background-color: yellow;"></div>
+        <div id="yellow3" class="box"></div>
+        <div id="yellow2" class="box"></div>
+        <div id="yellow1" class="box"></div>
+
+    </div>
+
+    <div id="center"><img src="images/center.jpg" alt="center"></div>
+
+    <div id="redImg">
+        <img src="board/red.jpg" alt="">
+        <img src="board/redDisc.jpg" alt="" width="50px" id="discRed1" class="tl" onclick="checkOpen(red,this.id)">
+        <img src="board/redDisc.jpg" alt="" width="50px" id="discRed2" class="tr" onclick="checkOpen(red,this.id)">
+        <img src="board/redDisc.jpg" alt="" width="50px" id="discRed3" class="bl" onclick="checkOpen(red,this.id)">
+        <img src="board/redDisc.jpg" alt="" width="50px" id="discRed4" class="br" onclick="checkOpen(red,this.id)">
+    </div>
+
+    <div id="greenImg">
+        <img src="board/green.jpg" alt="">
+        <img src="board/greenDisc.jpg" alt="" width="50px" class="tl" id="discGreen1" onclick="checkOpen(green,this.id)">
+        <img src="board/greenDisc.jpg" alt="" width="50px" class="tr" id="discGreen2" onclick="checkOpen(green,this.id)">
+        <img src="board/greenDisc.jpg" alt="" width="50px" class="bl" id="discGreen3" onclick="checkOpen(green,this.id)">
+        <img src="board/greenDisc.jpg" alt="" width="50px" class="br" id="discGreen4" onclick="checkOpen(green,this.id)">
+    </div>
+
+    <div id="blueImg">
+        <img src="board/blue.jpg" alt="">
+        <img src="board/blueDisc.jpg" alt="" width="50px" id="discBlue1" class="tl" onclick="checkOpen(blue,this.id)">
+        <img src="board/blueDisc.jpg" alt="" width="50px" id="discBlue2" class="tr" onclick="checkOpen(blue,this.id)">
+        <img src="board/blueDisc.jpg" alt="" width="50px" id="discBlue3" class="bl" onclick="checkOpen(blue,this.id)">
+        <img src="board/blueDisc.jpg" alt="" width="50px" id="discBlue4" class="br" onclick="checkOpen(blue,this.id)">
+    </div>
+
+    <div id="yellowImg">
+        <img src="board/yellow.jpg" alt="">
+        <img src="board/yellowDisc.jpg" alt="" width="50px" id="discYellow1" class="tl" onclick="checkOpen(yellow,this.id)">
+        <img src="board/yellowDisc.jpg" alt="" width="50px" id="discYellow2" class="tr" onclick="checkOpen(yellow,this.id)">
+        <img src="board/yellowDisc.jpg" alt="" width="50px" id="discYellow3" class="bl" onclick="checkOpen(yellow,this.id)">
+        <img src="board/yellowDisc.jpg" alt="" width="50px" id="discYellow4" class="br" onclick="checkOpen(yellow,this.id)">
+    </div>
+
+    <button id="dice" style="background-color: grey;">1</button>
+</body>
+
+<script src="script.js"></script>
+
+</html>
