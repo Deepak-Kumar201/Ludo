@@ -128,3 +128,38 @@
     width: 0px;
     height: 0px;
 }
+
+#victList{
+    list-style: none;
+}
+
+#victList li{
+    width:250px;
+    height:60px;
+    line-height: 60px;
+    background:grey;
+    border:1px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px white;
+    margin:10px;
+}
+#victLog li:nth-child(1){
+    margin-top:20px;
+}
+#victLog{
+    width:300px;
+    height:320px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align:center;
+    justify-content: space-evenly;
+    font-size: 25px;
+    color:white;
+    margin:auto;
+    background:rgba(0, 0, 0, 0.616);
+    border-radius:5px;
+    box-shadow: 5px 5px 5px black;
+    vertical-align:middle;
+    position: absolute;
+    z-index: 4;
+}

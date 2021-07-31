@@ -1,3 +1,4 @@
+var body =document.getElementById('body');
 var red = {
     parent: document.getElementById('red'),
     box: document.getElementById('red').children,
@@ -133,6 +134,7 @@ var yellow = {
 }
 
 wholeDisc = [red, green, blue, yellow];
+matchLeft = [red, green, blue, yellow];
 
 var getId = function(box) {
     boxId = box.id;
@@ -146,6 +148,21 @@ var getId = function(box) {
 curTurn = -1;
 
 dice = document.getElementById('dice');
+complete=[];
+var vict=0;
+function checkVict(){
+    for(i=0;i<matchLeft.length;i++){
+        var localCount=0;
+        for(dis of matchLeft[i].disc) if(dis.reqStep==0)localCount++;
+        if(localCount==4){
+            vict++;
+            if(!complete.includes(matchLeft[i].color)) complete.push(matchLeft[i].color);
+            matchLeft.pop(i);
+            i--;
+        }
+    }
+    return vict;
+}
 
 function checkPoss(thisID) {
     if (thisID[thisID.length - 2] == wholeDisc[curTurn].color[wholeDisc[curTurn].color.length - 1]) { return 1; }
@@ -209,6 +226,22 @@ function checkMove(clr, thisID) {
             moveTo.append(moveDisc);
             dice.removeAttribute("disabled");
             dice.innerHTML = 0;
+            checkVict();
+            if(vict==4){
+                var elem=`<div id="victLog">
+                    <ul id="victList">
+                        <li>1st is ${complete[0]}</li>
+                        <li>2nd is ${complete[1]}</li>
+                        <li>3rd is ${complete[2]}</li>
+                        <li>4th is ${complete[3]}</li>
+                        
+                    </ul>
+               </div>`;
+               body.innerHTML +=elem;
+               var victLog=document.getElementById("victLog");
+               victLog.style.top=(innerHeight-320)/2+"px";
+
+            }
             if (curDisc.reqStep == 0) {
                 moveDisc.remove();
                 flag = 1;
@@ -259,7 +292,7 @@ function checkOpen(clr, thisID) {
 }
 
 function movable() {
-    curObj = wholeDisc[curTurn];
+    curObj = matchLeft[curTurn];
     if (curObj.unlock != 4 && dice.innerHTML == 6) {
         return 1;
     } else if (curObj.unlock == 0) return 0;
@@ -277,9 +310,10 @@ dice.addEventListener('click', function() {
     x = 1 + parseInt(Math.random() * 6);
     dice.innerHTML = x;
     curTurn += 1;
-    curTurn %= 4;
+    curTurn %= matchLeft.length;
+    checkVict();
     if (movable() == 1) dice.setAttribute("disabled", "");
-    dice.style.backgroundColor = wholeDisc[curTurn].color;
+    dice.style.backgroundColor = matchLeft[curTurn].color;
 
 
 })
