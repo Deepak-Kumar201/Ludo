@@ -314,6 +314,16 @@ dice.addEventListener('click', function() {
     checkVict();
     if (movable() == 1) dice.setAttribute("disabled", "");
     dice.style.backgroundColor = matchLeft[curTurn].color;
+    console.log("dice clicked")
+})
 
-
+dice.addEventListener('mouseover', function() {
+    x = 1 + parseInt(Math.random() * 6);
+    dice.innerHTML = x;
+    curTurn += 1;
+    curTurn %= matchLeft.length;
+    checkVict();
+    if (movable() == 1) dice.setAttribute("disabled", "");
+    dice.style.backgroundColor = matchLeft[curTurn].color;
+    console.log("dice clicked")
 })
